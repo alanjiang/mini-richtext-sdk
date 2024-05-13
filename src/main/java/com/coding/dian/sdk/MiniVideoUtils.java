@@ -145,18 +145,11 @@ public class MiniVideoUtils {
     }
 
     public static void main(String[] args) throws Exception{
-        //String content = "<p>Fomei美暖&nbsp;是联米科技旗下的高端品牌，是中国智能电热围巾，智能电热披肩，智能电热袜等产品的高端品牌。</p><p><br></p><p><img src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000051/360x360/202405012006401fca.jpg\"></p><p><br></p><p>来看一下产品的实际效果：</p><p><br></p> <iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa.mp4\"></iframe><p><iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa123.mp4\"></iframe></p>";
-        //String content = "<p>Fomei美暖&nbsp;是联米科技旗下的高端品牌，是中国智能电热围巾，智能电热披肩，智能电热袜等产品的高端品牌。</p><p><br></p><p><img src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000051/360x360/202405012006401fca.jpg\"></p><p><br></p><p>来看一下产品的实际效果：</p><p><br></p> <iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa.mp4\"></iframe>";
-          String content ="<p>Fomei美暖&nbsp;是联米科技旗下的高端品牌，是中国智能电热围巾，智能电热披肩，智能电热袜等产品的高端品牌。</p><p><br></p><p><img src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000051/360x360/202405012006401fca.jpg\"></p><p><br></p><p>来看一下产品的实际效果：</p><p><br></p><iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa.mp4\"></iframe>";
-         //System.out.println("--->step1: 替换 iframe 为 video <----");
-       // String newContent = replaceVideos(content);
-       // System.out.println("---> newContent= "+newContent);
-        // <p>Fomei美暖&nbsp;是联米科技旗下的高端品牌，是中国智能电热围巾，智能电热披肩，智能电热袜等产品的高端品牌。</p><p><br></p><p><img src="https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000051/360x360/202405012006401fca.jpg"></p><p><br></p><p>来看一下产品的实际效果：</p><p><br></p> <video src="https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa.mp4" controls></video><p><video src="https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000052/202404270826083cfa123.mp4" controls></video></p>
-       // System.out.println("--->step2: 将 html与video 分离 <----");
-        List<Seperator> seperators = getSeperators(content); // 视频和HTML对象按顺序输出
+        String content ="<p>Fomei美暖&nbsp;是联米科技旗下的高端品牌，是中国智能电热围巾，智能电热披肩，智能电热袜等产品的高端品牌。</p><p><br></p><p><img src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/media/10000051/360x360/202405012006401fca.jpg\"></p><p><br></p><p>来看一下产品的实际效果：</p><p><br></p><iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://s3.cn-northwest-1.amazonaws.com.cn/coding-2020/10000052/202404270826083cfa.mp4\"></iframe>";
+        List<Seperator> seperators = MiniVideoUtils.getSeperators(content); // 视频和HTML对象按顺序输出
         for(Seperator sep : seperators) {
 
-            System.out.println("content="+sep.getContent()+",type="+sep.getType());
+            System.out.println("内容："+sep.getContent()+",类型："+sep.getType());
         }
 
 
